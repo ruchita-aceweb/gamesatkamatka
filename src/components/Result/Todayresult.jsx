@@ -7,6 +7,7 @@ const Todayresult = () => {
   const [markets, setMarkets] = useState([]);
   const [resultData, setResultData] = useState([]);
   const [editModal, seteditModal] = useState(false);
+  const [currentDate, setCurrentDate] = useState('');
 
   const editmarket = () => {
     seteditModal(true);
@@ -25,6 +26,7 @@ const Todayresult = () => {
       // Optionally, you can handle errors here
     }
   };
+
   useEffect(() => {
     const fetchMarkets = async () => {
       try {
@@ -37,7 +39,12 @@ const Todayresult = () => {
     };
 
     fetchMarkets();
+
+    // Set current date
+    const currentDate = new Date().toLocaleDateString();
+    setCurrentDate(currentDate);
   }, []);
+
 
   return (
     <>
@@ -47,8 +54,8 @@ const Todayresult = () => {
         <div className=''>
           <h1 className="text-xl  text-black font-bold">Today's Result</h1>
           </div>
-          <div >
-            <h1 className='font-bold py-1 px-6  rounded-sm border'>01/02/2024</h1>
+          <div>
+            <h1 className='font-bold py-1 px-6  rounded-sm border'>{currentDate}</h1>
           </div>
         </div>
         <div>
