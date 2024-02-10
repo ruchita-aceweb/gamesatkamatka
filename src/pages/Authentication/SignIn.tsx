@@ -149,23 +149,13 @@ const SignIn = () => {
 
          
 
-              <div className="mt-6 text-center">
-                <p>
-                  Don’t have any account?{' '}
-                  <Link to="/auth/signup" className="text-primary">
-                    <button >
-                    Sign Up
-                    </button>
-                   
-                  </Link>
-                </p>
-              </div>
+            
             </form>
           </div>
         </div>
        
       </div>
-      <ToastContainer />
+      <ToastContainer />sta
     </div>
   </>
   );
